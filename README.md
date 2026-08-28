@@ -1,88 +1,127 @@
-<!-- README with animated SVG hero (dark theme, SVG-first) -->
-
 <p align="center">
   <img src="assets/hero-3d.svg" alt="Animated 3D hero background (dark theme)" style="max-width:100%; height:auto;" />
 </p>
 
-# Hi 👋 I'm Marugani Reddi Sekhar <img src="assets/logo-mrs.svg" alt="MRS logo" width="42" style="vertical-align:middle; margin-left:8px;" />
+# Hi 👋, I'm Marugani Reddi Sekhar <img src="assets/logo-mrs.svg" alt="MRS logo" width="42" style="vertical-align:middle; margin-left:8px;" />
+<h3 align="left">🚀 Full Stack Developer | Data Science & AI Enthusiast</h3>
 
-Full Stack Engineer · Backend-focused · ML & AI Enthusiast  
-[Portfolio](https://myportfolio.sekhar.tech/) · [Resume (PDF)](https://myportfolio.sekhar.tech/resume.pdf)
-
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&color=00F7FF&center=true&vCenter=true&width=720&height=40&lines=Full+Stack+Developer;Backend+Focused+Engineer;React+•+Node+•+Python;ML+%26+LLMs" alt="Typing animation" />
+<p align="left">
+  <img src="https://readme-typing-svg.herokuapp.com?color=00F7FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;Backend+Focused+Engineer;React+%7C+Node+%7C+Python;Building+Scalable+Applications" alt="typing animation" />
 </p>
 
 ---
 
-## Table of Contents
-- [About Me](#about-me)
-- [Featured Projects](#featured-projects)
-- [Tech Stack](#tech-stack)
-- [Publications](#publications)
-- [Contact](#contact)
+## 💫 About Me
+🔭 Building **scalable web apps, backend systems & AI-driven solutions**  
+🌱 Exploring **Machine Learning, LLMs & System Design**  
+👯 Open to collaborate on **Full Stack & Open Source Projects**  
+🤔 Focused on **Backend Engineering + Data Pipelines**  
+💬 Ask me about **React, Node.js, APIs, Python, Databases**  
+⚡ Fun fact: *I turn complex ideas into working products*  
 
 ---
 
-## About Me
-I build scalable web and backend systems and enjoy applying machine learning to solve real-world problems. I focus on backend engineering, data pipelines, and LLM-enabled applications.
-
-- 🔭 Currently working on: ParkPlaze — smart parking booking & optimization  
-- 🌱 Exploring: LLM engineering, ML production systems, local fine-tuning  
-- 💬 Ask me about: React, Node.js, Python, APIs, PostgreSQL, Redis
+## 🌐 Portfolio
+🚀 Check out my work:  
+👉 **[My Portfolio](https://myportfolio.sekhar.tech/)**  
 
 ---
 
-## Featured Projects
-- 🔧 **ParkPlaze** — Smart parking platform with booking, payment flows and optimized slot allocation.  
-  Tech: React · Node.js · Redis · PostgreSQL  
-  Repo: https://github.com/Reddisekharyadav/parkplaze (add demo link)
+## 🧠 Tech Stack
 
-- 🏛️ **Meeseva Services Portal** — Azure-based full-stack service platform with secure APIs & role-based access.  
-  Tech: Java · Spring Boot · Azure AD · PostgreSQL  
-  Repo: https://github.com/Reddisekharyadav/meeseva-portal (add demo link)
+### 🚀 Full Stack Development
+<p align="center">
+<img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,express,angular,html,css,tailwind&theme=dark" alt="tech icons" />
+</p>
 
-- 📄 **GitHub Documentation Generator** — Automated Python tool to generate structured docs from a repository.  
-  Tech: Python · GitHub API · Markdown  
-  Repo: https://github.com/Reddisekharyadav/github-docgen
+### ⚙️ Backend & Databases
+<p align="center">
+<img src="https://skillicons.dev/icons?i=java,spring,python,mysql,postgres,mongodb,redis,firebase,prisma&theme=dark" alt="backend icons" />
+</p>
 
-- ⚙️ **Compressor Toolkit** — Media and document compression pipelines and CLI.  
-  Tech: Python · FFmpeg · Pillow · zstd  
-  Repo: https://github.com/Reddisekharyadav/compressor-toolkit
+### 📊 Data Science, ML & LLMs
+<p align="center">
+<img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow&theme=dark" alt="ml icons" />
+<br/>
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas" alt="Pandas"/>
+<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy" alt="NumPy"/>
+<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv" alt="OpenCV"/>
+<img src="https://img.shields.io/badge/LLMs-Prompt%20Engineering-blue?style=for-the-badge" alt="LLMs"/>
+<img src="https://img.shields.io/badge/NLP-Text%20Processing-orange?style=for-the-badge" alt="NLP"/>
+</p>
 
-
----
-
-## Tech Stack
-### Frontend
-React · Next.js · TypeScript · Tailwind · HTML · CSS
-
-### Backend & Databases
-Node.js · Express · Java · Spring Boot · Python · PostgreSQL · MongoDB · Redis · Prisma
-
-### Data & ML
-Python · PyTorch · TensorFlow · Pandas · NumPy · OpenCV · LLMs
-
-### DevOps & Tools
-Git · GitHub · Docker · GitHub Actions / Jenkins · Vercel · Azure
+### ☁️ DevOps & Tools
+<p align="center">
+<img src="https://skillicons.dev/icons?i=git,github,docker,jenkins,linux,vercel,netlify,azure&theme=dark" alt="devops icons" />
+</p>
 
 ---
 
-## Publications
-- Marugani R. S., et al. (2025). "Minimizing Return Rates in Online Fashion through Personalized Avatar-Based Fitting." IEEE SCIS 2025. [Springer link](https://link.springer.com/chapter/10.1007/978-3-032-22914-4_2)  
-  Short: avatar-based fitting reduced return rates in experiments.
+## 🚀 Featured Projects
 
-- Marugani R. S., et al. (2026). "Speech Emotion Recognition using Hybrid CNN–BiLSTM with Attention Mechanism." IEEE IATMSI 2026. [IEEE link](https://ieeexplore.ieee.org/document/11466131)  
-  Short: hybrid model with attention improved F1-score on benchmark datasets.
-
----
-
-## Contact
-- ✉️ reddisekharmarugani@gmail.com  
-- 🔗 LinkedIn: https://linkedin.com/in/marugani-reddi-sekhar-83644b253  
-- ▶️ YouTube: https://youtube.com/@MaruganiReddisekhar
+- 🚗 **ParkPlaze** – Smart parking platform with booking, services & optimized slot allocation  
+- 🛠️ **Meeseva Services Portal** – Azure-based full-stack service platform with secure APIs  
+- 📄 **GitHub Documentation Generator** – Automated Python tool for structured repo documentation  
+- ⚙️ **Compressor Toolkit** – Media & document compression system with optimized algorithms  
 
 ---
 
-*Notes:*
-- This branch (readme/visual-upgrade) adds an SVG-first dark-theme hero and a compact layout. The SVG hero is reduced-motion friendly (respects prefers-reduced-motion). If you'd like per-project animated previews, I can add optimized WebP previews under /assets and include them in project cards.
+## 📄 Publications
+
+📌 **Minimizing Return Rates in Online Fashion through Personalized Avatar-Based Fitting**  
+→ IEEE SCIS 2025 (Accepted)  
+🔗 [View Paper](https://link.springer.com/chapter/10.1007/978-3-032-22914-4_2)
+
+📌 **Speech Emotion Recognition using Hybrid CNN–BiLSTM with Attention Mechanism**  
+→ IEEE IATMSI 2026 (Accepted)  
+🔗 [View Paper](https://ieeexplore.ieee.org/document/11466131)
+
+---
+
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=Reddisekharyadav&theme=dark&hide_border=true&show_icons=true)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=Reddisekharyadav&theme=dark&hide_border=true)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Reddisekharyadav&theme=dark&hide_border=true&layout=compact)
+
+---
+
+## 🏆 Achievements & Badges
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Reddisekharyadav&theme=tokyonight&no-frame=true&margin-w=10" alt="trophy"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/IEEE-Publication-blue?style=for-the-badge" alt="IEEE"/>
+  <img src="https://img.shields.io/badge/Full%20Stack-Developer-success?style=for-the-badge" alt="Full Stack"/>
+  <img src="https://img.shields.io/badge/AI%20%7C%20ML-Enthusiast-orange?style=for-the-badge" alt="AI ML"/>
+  <img src="https://img.shields.io/badge/Backend-Focused-critical?style=for-the-badge" alt="Backend"/>
+</p>
+
+---
+
+## 🌐 Connect With Me
+<p align="center">
+  <a href="https://instagram.com/reddi9031"><img src="https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/></a>
+  <a href="https://linkedin.com/in/marugani-reddi-sekhar-83644b253"><img src="https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="https://youtube.com/@MaruganiReddisekhar"><img src="https://img.shields.io/badge/YouTube-%23FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube"/></a>
+  <a href="mailto:reddisekharmarugani@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+</p>
+
+---
+
+## ✨ Dev Quote
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="quote"/>
+</p>
+
+---
+
+## 👀 Visitors
+<p align="center">
+  <img src="https://visitcount.itsvg.in/api?id=Reddisekharyadav&icon=5&color=6" alt="visitor count"/>
+</p>
+
+---
+
+⭐ *If you like my work, consider starring my repositories!*
