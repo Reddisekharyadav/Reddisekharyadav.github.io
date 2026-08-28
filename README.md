@@ -1,6 +1,6 @@
-<p align="center">
+<!-- <p align="center">
   <img src="assets/hero-3d.svg" alt="Animated 3D hero background (dark theme)" style="max-width:100%; height:auto;" />
-</p>
+</p> -->
 
 # Hi 👋, I'm Marugani Reddi Sekhar <img src="assets/logo-mrs.svg" alt="MRS logo" width="42" style="vertical-align:middle; margin-left:8px;" />
 <h3 align="left">🚀 Full Stack Developer | Data Science & AI Enthusiast</h3>
