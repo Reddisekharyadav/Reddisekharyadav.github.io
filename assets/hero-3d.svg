@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0f1724" />
+      <stop offset="50%" stop-color="#07101a" />
+      <stop offset="100%" stop-color="#001219" />
+    </linearGradient>
+    <linearGradient id="neon" x1="0" x2="1">
+      <stop offset="0%" stop-color="#00F7FF" />
+      <stop offset="100%" stop-color="#7C5CFF" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style><![CDATA[
+      .cube { fill: none; stroke: url(#neon); stroke-width:1.5; opacity:0.9; filter:url(#glow); }
+      .particle { fill:#00F7FF; opacity:0.12; filter:url(#glow); }
+      .title { font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; fill: #E6F7FF; font-weight:600; font-size:28px; }
+      .subtitle { font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; fill:#9FDFF7; font-size:14px; opacity:0.95; }
+      .card { fill: rgba(10,15,20,0.45); stroke: rgba(255,255,255,0.03); }
+      .cta { fill: url(#neon); font-weight:700; font-size:12px; }
+    ]]></style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="360" fill="url(#bg)" />
+
+  <!-- drifting particles -->
+  <g>
+    <circle class="particle" cx="80" cy="60" r="3">
+      <animate attributeName="cx" values="80;140;80" dur="12s" repeatCount="indefinite" />
+    </circle>
+    <circle class="particle" cx="320" cy="120" r="2.7">
+      <animate attributeName="cx" values="320;260;320" dur="10s" repeatCount="indefinite" />
+    </circle>
+    <circle class="particle" cx="960" cy="40" r="4">
+      <animate attributeName="cy" values="40;100;40" dur="14s" repeatCount="indefinite" />
+    </circle>
+    <circle class="particle" cx="760" cy="220" r="2">
+      <animate attributeName="cx" values="760;700;760" dur="9s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- wireframe cubes (simulate 3D) using SMIL animateTransform for compatibility -->
+  <g transform="translate(160,180) scale(1.2)">
+    <g class="cube" >
+      <path d="M0 0 L40 -16 L40 24 L0 40 Z" />
+      <path d="M40 -16 L80 0 L80 40 L40 24 Z" />
+      <path d="M0 0 L40 -16 L80 0 L40 16 Z" />
+      <!-- float animation -->
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;0 -18;0 0" dur="9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 18 40;0 0 40;0 18 40" dur="9s" additive="sum" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g transform="translate(520,120) scale(1)">
+    <g class="cube">
+      <path d="M0 0 L48 -20 L48 28 L0 48 Z" />
+      <path d="M48 -20 L96 0 L96 48 L48 28 Z" />
+      <path d="M0 0 L48 -20 L96 0 L48 16 Z" />
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;0 -24;0 0" dur="11s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 -14 48;0 0 48;0 -14 48" dur="11s" additive="sum" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g transform="translate(920,200) scale(0.95)">
+    <g class="cube">
+      <path d="M0 0 L36 -14 L36 26 L0 36 Z" />
+      <path d="M36 -14 L72 0 L72 36 L36 26 Z" />
+      <path d="M0 0 L36 -14 L72 0 L36 14 Z" />
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0;0 -30;0 0" dur="13s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" values="0 22 36;0 0 36;0 22 36" dur="13s" additive="sum" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- central translucent card with name and CTA -->
+  <g transform="translate(120,60)">
+    <rect x="220" y="30" rx="12" ry="12" width="760" height="140" class="card" />
+
+    <!-- logo + title -->
+    <g transform="translate(260,88)">
+      <!-- inline small logo placeholder (will be replaced by repo logo img in README) -->
+      <circle cx="0" cy="0" r="22" fill="#001219" stroke="#00F7FF" stroke-opacity="0.12" />
+      <text x="34" y="6" class="title">Hi 👋 I'm <tspan fill="#00F7FF">Marugani</tspan> Reddi Sekhar</text>
+      <text x="34" y="36" class="subtitle">Full Stack Engineer · Backend-focused · ML & AI Enthusiast</text>
+    </g>
+
+    <!-- CTA buttons -->
+    <g transform="translate(780,162)">
+      <rect rx="10" ry="10" width="120" height="30" fill="#001219" stroke="#00F7FF" opacity="0.06" />
+      <text x="16" y="20" class="cta"> View Portfolio</text>
+    </g>
+  </g>
+
+  <!-- subtle footer line -->
+  <text x="24" y="345" font-size="10" fill="#23313b" opacity="0.6">Dark-mode animated hero • Reduced-motion friendly</text>
+</svg>
