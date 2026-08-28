@@ -6,7 +6,7 @@
 <h3 align="left">🚀 Full Stack Developer | Data Science & AI Enthusiast</h3>
 
 <p align="left">
-  <img src="https://readme-typing-svg.herokuapp.com?color=00F7FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;Backend+Focused+Engineer;React+%7C+Node+%7C+Python;Building+Scalable+Applications" alt="typing animation" />
+  <img src="https://readme-typing-svg.herokuapp.com?color=00F7FF&center=true&vCenter=true&width=600&lines=Full+Stack+Developer;Backend+Focused+Engineer;React+%7C+Node+%7C+Python;Building+Scalable+Applications" alt="Typing SVG" />
 </p>
 
 ---
@@ -79,16 +79,16 @@
 ---
 
 # 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=Reddisekharyadav&theme=dark&hide_border=true&show_icons=true)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=Reddisekharyadav&theme=dark&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Reddisekharyadav&theme=dark&hide_border=true&layout=compact)
+![](https://github-readme-stats.vercel.app/api?username=Reddisekharyadav&theme=black&hide_border=true&show_icons=true)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=Reddisekharyadav&theme=black&hide_border=true)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Reddisekharyadav&theme=black&hide_border=true&layout=compact)
 
 ---
 
 ## 🏆 Achievements & Badges
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Reddisekharyadav&theme=tokyonight&no-frame=true&margin-w=10" alt="trophy"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=Reddisekharyadav&theme=algolia&no-frame=true&margin-w=10" alt="trophy"/>
 </p>
 
 <p align="center">
@@ -112,7 +112,7 @@
 
 ## ✨ Dev Quote
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="quote"/>
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=black" alt="quote"/>
 </p>
 
 ---
