@@ -1,40 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 300" width="100%" height="300" preserveAspectRatio="xMidYMid slice">
   <defs>
     <style>
       @keyframes rotate3d {
-        0% { transform: rotateX(0deg) rotateY(0deg); }
-        100% { transform: rotateX(360deg) rotateY(360deg); }
+        0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
       }
       .cube-3d {
-        animation: rotate3d 8s infinite linear;
-        transform-style: preserve-3d;
+        animation: rotate3d 10s infinite linear;
+      }
+      .cube-float {
+        animation: float 4s ease-in-out infinite;
       }
     </style>
-    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="heroGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#00f7ff;stop-opacity:1" />
       <stop offset="50%" style="stop-color:#ff006e;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#8338ec;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="heroGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8338ec;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00f7ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="600" fill="#0a0e27"/>
+  <!-- Dark Background -->
+  <rect width="1920" height="300" fill="#0a0e27"/>
+  
+  <!-- Animated gradient background overlay -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#00f7ff;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#8338ec;stop-opacity:0.05" />
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="300" fill="url(#bgGradient)"/>
 
-  <!-- Animated Cube -->
-  <g class="cube-3d" transform="translate(600, 300)">
-    <!-- Front face -->
-    <rect x="-80" y="-80" width="160" height="160" fill="url(#heroGradient)" opacity="0.9"/>
-    <!-- Back face -->
-    <rect x="-70" y="-70" width="140" height="140" fill="#00f7ff" opacity="0.3" transform="translate(20, 20)"/>
-    <!-- Top face -->
-    <polygon points="-80,-80 80,-80 90,-90 -90,-90" fill="#ff006e" opacity="0.7"/>
+  <!-- Floating Cubes - Left -->
+  <g class="cube-float" transform="translate(200, 150)">
+    <g class="cube-3d">
+      <rect x="-40" y="-40" width="80" height="80" fill="url(#heroGradient1)" opacity="0.85" filter="url(#glow)"/>
+      <rect x="-35" y="-35" width="70" height="70" fill="none" stroke="#00f7ff" stroke-width="2" opacity="0.5"/>
+    </g>
   </g>
 
-  <!-- Text -->
-  <text x="600" y="500" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="#00f7ff" font-weight="bold">
-    Full Stack Developer
-  </text>
-  <text x="600" y="550" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#ff006e">
-    Welcome to my Portfolio
+  <!-- Floating Cubes - Center -->
+  <g class="cube-float" transform="translate(960, 150)" style="animation-delay: -1s;">
+    <g class="cube-3d">
+      <rect x="-50" y="-50" width="100" height="100" fill="url(#heroGradient2)" opacity="0.9" filter="url(#glow)"/>
+      <rect x="-45" y="-45" width="90" height="90" fill="none" stroke="#ff006e" stroke-width="2" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Floating Cubes - Right -->
+  <g class="cube-float" transform="translate(1720, 150)" style="animation-delay: -2s;">
+    <g class="cube-3d">
+      <rect x="-40" y="-40" width="80" height="80" fill="url(#heroGradient1)" opacity="0.85" filter="url(#glow)"/>
+      <rect x="-35" y="-35" width="70" height="70" fill="none" stroke="#8338ec" stroke-width="2" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Decorative lines -->
+  <line x1="0" y1="150" x2="1920" y2="150" stroke="#00f7ff" stroke-width="1" opacity="0.1"/>
+  <line x1="100" y1="0" x2="100" y2="300" stroke="#ff006e" stroke-width="1" opacity="0.05"/>
+  <line x1="1820" y1="0" x2="1820" y2="300" stroke="#ff006e" stroke-width="1" opacity="0.05"/>
+
+  <!-- Subtle text hint (optional, can be removed) -->
+  <text x="960" y="280" text-anchor="middle" font-size="14" font-family="Arial, sans-serif" fill="#00f7ff" opacity="0.5">
+    Scroll down to explore
   </text>
 </svg>
