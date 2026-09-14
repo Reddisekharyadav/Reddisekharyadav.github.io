@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>M. Reddi Sekhar — Project Log</title>
+<title>Reddi Sekhar — Project Log</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -15,25 +15,33 @@
     --rule:#D7D3C4;
     --pine:#1E6E64;
     --pine-deep:#164F48;
-    --amber:#B8722E;
-    --amber-soft:#EFDFC6;
+    --brass:#A9821F;
+    --brass-soft:#EFE3BE;
+    --grid-line: rgba(30,110,100,0.07);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--paper);
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/38px 38px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/38px 38px,
+      var(--paper);
     color:var(--ink);
     font-family:'Inter',sans-serif;
     font-size:16px;
     line-height:1.6;
   }
-  ::selection{background:var(--amber-soft);}
+  ::selection{background:var(--brass-soft);}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
 
   h1,h2,h3,.serif{font-family:'Fraunces',serif;}
   .mono{font-family:'IBM Plex Mono',monospace;}
 
   a{color:var(--pine-deep);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--pine-deep); outline-offset:3px;}
 
   .layout{
     display:grid;
@@ -58,18 +66,32 @@
     text-decoration:none;
     color:var(--ink-soft);
     font-size:.85rem;
+    position:relative;
+    padding-left:0;
+    transition:color .2s ease, padding-left .2s ease;
   }
   .index-list a:hover{color:var(--pine-deep);}
+  .index-list a.active{color:var(--pine-deep); font-weight:600; padding-left:6px;}
+  .index-list a.active .num{color:var(--pine-deep);}
+  .index-list a.active::before{
+    content:"";
+    position:absolute; left:-14px; top:3px; bottom:3px; width:2px;
+    background:var(--pine-deep);
+  }
   .index-list .num{
     font-family:'IBM Plex Mono',monospace;
     font-size:.72rem;
-    color:var(--amber);
+    color:var(--brass);
     padding-top:1px;
+    transition:color .2s ease;
   }
 
   main{padding:64px 48px 100px;}
   section{margin-bottom:96px; scroll-margin-top:40px;}
   section:last-of-type{margin-bottom:40px;}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
 
   .kicker{
     font-family:'IBM Plex Mono',monospace;
@@ -80,6 +102,25 @@
   h2{font-size:1.9rem; font-weight:600; margin:0 0 28px; max-width:640px;}
 
   /* HERO */
+  .hero{position:relative; margin-bottom:72px;}
+  .hero-canvas-wrap{
+    position:relative;
+    height:400px;
+    margin:0 -48px 40px;
+    overflow:hidden;
+    border-bottom:1px solid var(--rule);
+    border-top:1px solid var(--rule);
+    background:linear-gradient(180deg, rgba(22,79,72,0.05), transparent);
+  }
+  #hero-canvas{display:block; width:100%; height:100%; cursor:default;}
+  .hero-canvas-wrap .hint{
+    position:absolute; bottom:12px; right:16px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.68rem;
+    color:var(--ink-soft);
+    opacity:.65;
+  }
+  .hero-text{padding:0 48px;}
   .hero h1{
     font-size:3.1rem;
     font-weight:600;
@@ -125,7 +166,9 @@
   .capability{
     background:var(--paper-raised);
     padding:24px;
+    transition:background .25s ease;
   }
+  .capability:hover{background:#F6F3E7;}
   .capability h3{
     font-size:1rem;
     font-weight:600;
@@ -159,7 +202,7 @@
   .fcard .idx{
     font-family:'IBM Plex Mono',monospace;
     font-size:.78rem;
-    color:var(--amber);
+    color:var(--brass);
     padding-top:4px;
   }
   .fcard .body{max-width:760px;}
@@ -169,7 +212,7 @@
     font-weight:600;
     font-family:'Fraunces',serif;
   }
-  .fcard h3 a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule);}
+  .fcard h3 a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule); transition:border-color .2s ease, color .2s ease;}
   .fcard h3 a:hover{color:var(--pine-deep); border-color:var(--pine-deep);}
   .kv{margin:0 0 6px; font-size:.92rem;}
   .kv .k{color:var(--ink-soft); font-size:.78rem; display:inline-block; width:78px;}
@@ -189,7 +232,6 @@
     font-family:'Inter',sans-serif;
     font-size:.85rem;
     font-weight:600;
-    text-transform:none;
     color:var(--pine-deep);
     margin:0 0 4px;
     padding-bottom:10px;
@@ -227,7 +269,7 @@
     border-top:1px solid var(--rule);
   }
   .pub:last-child{border-bottom:1px solid var(--rule);}
-  .pub .venue{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--amber); margin-bottom:6px;}
+  .pub .venue{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--brass); margin-bottom:6px;}
   .pub h3{font-size:1.05rem; margin:0 0 8px; font-family:'Fraunces',serif;}
   .pub p{font-size:.9rem; color:var(--ink-soft); margin:0 0 8px; max-width:640px;}
   .pub a{font-size:.82rem;}
@@ -259,6 +301,8 @@
     .index{position:static; height:auto; padding:32px 24px 0;}
     main{padding:24px 24px 60px;}
     .hero h1{font-size:2.2rem;}
+    .hero-canvas-wrap{margin:0 -24px 32px; height:280px;}
+    .hero-text{padding:0 24px;}
   }
 </style>
 </head>
@@ -270,37 +314,43 @@
     <p class="index-name">Reddi Sekhar</p>
     <p class="index-role">Integrated M.Tech CSE · Full-Stack &amp; Applied AI</p>
     <ul class="index-list">
-      <li><a href="#capability"><span class="num">01</span><span>How I solve problems</span></a></li>
-      <li><a href="#featured"><span class="num">02</span><span>Featured projects</span></a></li>
-      <li><a href="#software"><span class="num">03</span><span>Software &amp; product</span></a></li>
-      <li><a href="#aiml"><span class="num">04</span><span>AI / ML &amp; data</span></a></li>
-      <li><a href="#iot"><span class="num">05</span><span>IoT &amp; embedded</span></a></li>
-      <li><a href="#tools"><span class="num">06</span><span>Tools &amp; coursework</span></a></li>
-      <li><a href="#publications"><span class="num">07</span><span>Publications</span></a></li>
-      <li><a href="#stack"><span class="num">08</span><span>Tech stack</span></a></li>
+      <li><a href="#capability" data-section="capability"><span class="num">01</span><span>How I solve problems</span></a></li>
+      <li><a href="#featured" data-section="featured"><span class="num">02</span><span>Featured projects</span></a></li>
+      <li><a href="#software" data-section="software"><span class="num">03</span><span>Software &amp; product</span></a></li>
+      <li><a href="#aiml" data-section="aiml"><span class="num">04</span><span>AI / ML &amp; data</span></a></li>
+      <li><a href="#iot" data-section="iot"><span class="num">05</span><span>IoT &amp; embedded</span></a></li>
+      <li><a href="#tools" data-section="tools"><span class="num">06</span><span>Tools &amp; coursework</span></a></li>
+      <li><a href="#publications" data-section="publications"><span class="num">07</span><span>Publications</span></a></li>
+      <li><a href="#stack" data-section="stack"><span class="num">08</span><span>Tech stack</span></a></li>
     </ul>
   </nav>
 
   <main>
 
     <section class="hero">
-      <p class="kicker">github.com/Reddisekharyadav — 42 repositories, reorganized</p>
-      <h1>I build things that resolve a specific, named problem — not demos.</h1>
-      <p>Full-stack systems, applied AI/ML, and connected devices, with a backend-first habit: model the workflow, ship a version that's correct under real conditions, then improve it with data. CGPA 8.77, two IEEE-accepted publications.</p>
+      <div class="hero-canvas-wrap">
+        <canvas id="hero-canvas"></canvas>
+        <span class="hint mono">move to explore</span>
+      </div>
+      <div class="hero-text">
+        <p class="kicker">github.com/Reddisekharyadav — 42 repositories, reorganized</p>
+        <h1>I build things that resolve a specific, named problem, not demos.</h1>
+        <p>Full-stack systems, applied AI/ML, and connected devices, with a backend-first habit: model the workflow, ship a version that's correct under real conditions, then improve it with data. CGPA 8.77, two IEEE-accepted publications.</p>
 
-      <div class="stat-row">
-        <div class="stat"><span class="n">42</span><span class="l">public repositories</span></div>
-        <div class="stat"><span class="n">10</span><span class="l">real-world problem projects</span></div>
-        <div class="stat"><span class="n">2</span><span class="l">IEEE-accepted papers</span></div>
-        <div class="stat"><span class="n">8.5</span><span class="l">CGPA</span></div>
-        <div class="stat"><span class="n">344+</span><span class="l">contributions logged</span></div>
+        <div class="stat-row">
+          <div class="stat"><span class="n" data-count="42">0</span><span class="l">public repositories</span></div>
+          <div class="stat"><span class="n" data-count="10">0</span><span class="l">real-world problem projects</span></div>
+          <div class="stat"><span class="n" data-count="2">0</span><span class="l">IEEE-accepted papers</span></div>
+          <div class="stat"><span class="n" data-count="8.77" data-decimal="1">0</span><span class="l">CGPA</span></div>
+          <div class="stat"><span class="n" data-count="344" data-suffix="+">0</span><span class="l">contributions logged</span></div>
+        </div>
       </div>
     </section>
 
-    <section id="capability">
+    <section id="capability" class="reveal">
       <p class="kicker">01 — Approach</p>
       <h2>Problem-solving capability</h2>
-      <p class="thesis">Across the project directory, a small set of recurring problem types shows up again and again — each solved with a deliberate technical choice, not a default one. Underneath the applied projects sits algorithmic groundwork: ranked-pattern practice (sliding window, multi-source BFS, greedy simulation, MEX-partition DP, range queries) built for competitive rounds, plus systems theory — networking internals, automata and complexity, compiler design — studied to the level of tracing behaviour by hand, not just recognizing terms.</p>
+      <p class="thesis">Across the project directory, a small set of recurring problem types shows up again and again, each solved with a deliberate technical choice, not a default one. Underneath the applied projects sits algorithmic groundwork: ranked-pattern practice (sliding window, multi-source BFS, greedy simulation, MEX-partition DP, range queries) built for competitive rounds, plus systems theory — networking internals, automata and complexity, compiler design — studied to the level of tracing behaviour by hand, not just recognizing terms.</p>
       <div class="capability-grid">
         <div class="capability">
           <h3>Concurrency-safe systems</h3>
@@ -319,7 +369,7 @@
         </div>
         <div class="capability">
           <h3>Explainable ML</h3>
-          <p>Models that justify a prediction, not just emit one — chosen where the "why" matters as much as the "what".</p>
+          <p>Models that justify a prediction, not just emit one, chosen where the "why" matters as much as the "what".</p>
           <span class="ex">Sea Creature Classification (LIME) · Speech Emotion Recognition</span>
         </div>
         <div class="capability">
@@ -335,7 +385,7 @@
       </div>
     </section>
 
-    <section id="featured">
+    <section id="featured" class="reveal">
       <p class="kicker">02 — Selected work</p>
       <h2>Featured projects</h2>
       <div class="featured-list">
@@ -443,7 +493,7 @@
       </div>
     </section>
 
-    <section id="software">
+    <section id="software" class="reveal">
       <p class="kicker">03 — Directory</p>
       <h2>Software &amp; product engineering</h2>
       <p class="thesis">Full-stack web apps and backend systems, several taken to a production-shaped state with real auth, databases, and cloud storage.</p>
@@ -463,10 +513,10 @@
       </div>
     </section>
 
-    <section id="aiml">
+    <section id="aiml" class="reveal">
       <p class="kicker">04 — Directory</p>
       <h2>AI, machine learning &amp; data</h2>
-      <p class="thesis">Applied ML across audio, vision, and tabular signals — with a recurring focus on making model output legible, not just accurate.</p>
+      <p class="thesis">Applied ML across audio, vision, and tabular signals, with a recurring focus on making model output legible, not just accurate.</p>
       <div class="rows">
         <div class="row"><a href="https://github.com/Reddisekharyadav/Enhanced-Speech-Emotion-Recognition-SER-System" target="_blank">Speech Emotion Recognition</a><span class="what">Real-time emotion detection — hybrid CNN-BiLSTM, published IEEE IATMSI 2026</span><span class="stack">Python · CNN/BiLSTM</span></div>
         <div class="row"><a href="https://github.com/Reddisekharyadav/Sea-Creature-Classification" target="_blank">Sea Creature Classification</a><span class="what">Marine life classifier with explainable predictions</span><span class="stack">Python · Deep Learning · LIME</span></div>
@@ -479,10 +529,10 @@
       </div>
     </section>
 
-    <section id="iot">
+    <section id="iot" class="reveal">
       <p class="kicker">05 — Directory</p>
       <h2>IoT, embedded &amp; safety systems</h2>
-      <p class="thesis">Where software meets a physical sensor — wearables, safety alerting, and assistive hardware.</p>
+      <p class="thesis">Where software meets a physical sensor: wearables, safety alerting, and assistive hardware.</p>
       <div class="rows">
         <div class="row"><a href="https://github.com/Reddisekharyadav/Fire-and-gas-detection-in-home-automation" target="_blank">Fire &amp; Gas Detection</a><span class="what">Home safety — sensors, video capture, Telegram alerts</span><span class="stack">C++ · Sensors</span></div>
         <div class="row"><a href="https://github.com/Reddisekharyadav/AI-powered-smart-glasses" target="_blank">AI Smart Glasses</a><span class="what">Assistive scene understanding via BLE glasses + mobile</span><span class="stack">React Native · BLE</span></div>
@@ -492,10 +542,10 @@
       </div>
     </section>
 
-    <section id="tools">
+    <section id="tools" class="reveal">
       <p class="kicker">06 — Directory</p>
       <h2>Tools, learning &amp; coursework</h2>
-      <p class="thesis">Practice repositories, coursework, and contributed or forked work — building blocks rather than standalone products.</p>
+      <p class="thesis">Practice repositories, coursework, and contributed or forked work: building blocks rather than standalone products.</p>
       <div class="rows">
         <div class="row"><a href="https://github.com/Reddisekharyadav/Reddisekharyadav.github.io" target="_blank">GitHub Pages Portfolio</a><span class="what">Public static portfolio and web presence</span><span class="stack">HTML · CSS · JS</span></div>
         <div class="row"><a href="https://github.com/Reddisekharyadav/neetcode-submissions" target="_blank">NeetCode Submissions</a><span class="what">Algorithm and data-structure practice</span><span class="stack">Python</span></div>
@@ -508,25 +558,25 @@
       </div>
     </section>
 
-    <section id="publications">
+    <section id="publications" class="reveal">
       <p class="kicker">07 — Research</p>
       <h2>Publications</h2>
 
       <div class="pub">
         <p class="venue">IEEE SCIS 2025 / Springer chapter</p>
         <h3>Personalized Avatar-Based Fitting for Online Fashion</h3>
-        <p>Proposes a 3D digital-twin and virtual try-on approach to reduce returns caused by sizing, fit, and color uncertainty — connecting computer vision and personalization with sustainability in e-commerce.</p>
-        <a href="https://link.springer.com/chapter/10.1007/978-3-032-22914-4_2" target="_blank">Read the paper →</a>
+        <p>Proposes a 3D digital-twin and virtual try-on approach to reduce returns caused by sizing, fit, and color uncertainty, connecting computer vision and personalization with sustainability in e-commerce.</p>
+        <a href="https://link.springer.com/chapter/10.1007/978-3-032-22914-4_2" target="_blank">Read the paper</a>
       </div>
       <div class="pub">
         <p class="venue">IEEE IATMSI 2026</p>
         <h3>Speech Emotion Recognition Using a Hybrid CNN-BiLSTM with Attention</h3>
         <p>An attention-based hybrid model for recognizing emotional cues in speech, supporting both real-time and file-based analysis.</p>
-        <a href="https://ieeexplore.ieee.org/document/11466131" target="_blank">Read the paper →</a>
+        <a href="https://ieeexplore.ieee.org/document/11466131" target="_blank">Read the paper</a>
       </div>
     </section>
 
-    <section id="stack">
+    <section id="stack" class="reveal">
       <p class="kicker">08 — Toolbox</p>
       <h2>Tech stack</h2>
       <div class="stack-grid">
@@ -570,5 +620,241 @@
   <div>Build for people. Learn in public. Improve every iteration.</div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+
+  /* ---------- Three.js hero: a lit, physically-shaded "core module" orbited by project nodes ---------- */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canvas = document.getElementById('hero-canvas');
+  var wrap = canvas.parentElement;
+
+  if (window.THREE && !reduceMotion) {
+    var scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0xEFEEE5, 9, 20);
+
+    var camera = new THREE.PerspectiveCamera(42, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
+    camera.position.set(0, 0.6, 11);
+
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(wrap.clientWidth, wrap.clientHeight, false);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    var group = new THREE.Group();
+    scene.add(group);
+
+    // ---- lighting: warm brass key + cool pine rim + soft ambient fill ----
+    var ambient = new THREE.AmbientLight(0xEFEEE5, 0.55);
+    scene.add(ambient);
+
+    var key = new THREE.DirectionalLight(0xFFE4B0, 1.05);
+    key.position.set(5, 6.5, 5.5);
+    key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.camera.left = -6; key.shadow.camera.right = 6;
+    key.shadow.camera.top = 6; key.shadow.camera.bottom = -6;
+    key.shadow.bias = -0.001;
+    scene.add(key);
+
+    var rim = new THREE.PointLight(0x3FB6A8, 0.85, 22);
+    rim.position.set(-6, -1.5, -3);
+    scene.add(rim);
+
+    // ---- the core module: a physically-shaded, faceted "chip" ----
+    var coreGeo = new THREE.IcosahedronGeometry(1.35, 1);
+    var coreMat = new THREE.MeshPhysicalMaterial({
+      color: 0x1A2233, metalness: 0.55, roughness: 0.3,
+      clearcoat: 0.55, clearcoatRoughness: 0.28
+    });
+    var core = new THREE.Mesh(coreGeo, coreMat);
+    core.castShadow = true; core.receiveShadow = true;
+    group.add(core);
+
+    // ---- soft contact shadow on an invisible floor (grounds the object) ----
+    var floor = new THREE.Mesh(
+      new THREE.PlaneGeometry(24, 24),
+      new THREE.ShadowMaterial({ opacity: 0.16 })
+    );
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -2.6;
+    floor.receiveShadow = true;
+    group.add(floor);
+
+    // ---- orbiting project nodes, each linked to the core by a conduit ----
+    var NODE_COUNT = 8;
+    var nodes = [];
+    var brass = 0xC79A2C, pine = 0x2E9385;
+
+    for (var i = 0; i < NODE_COUNT; i++) {
+      var isBrass = i % 2 === 0;
+      var size = 0.16 + Math.random() * 0.11;
+      var mat = new THREE.MeshStandardMaterial({
+        color: isBrass ? brass : pine,
+        metalness: 0.65, roughness: 0.32,
+        emissive: isBrass ? brass : pine, emissiveIntensity: 0.12
+      });
+      var mesh = new THREE.Mesh(new THREE.SphereGeometry(size, 20, 20), mat);
+      mesh.castShadow = true;
+      group.add(mesh);
+
+      var conduitMat = new THREE.MeshBasicMaterial({ color: isBrass ? brass : pine, transparent: true, opacity: 0.22 });
+      var conduit = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 1, 6), conduitMat);
+      group.add(conduit);
+
+      var pulseMat = new THREE.MeshBasicMaterial({ color: 0xFBFAF5, transparent: true, opacity: 0.9 });
+      var pulse = new THREE.Mesh(new THREE.SphereGeometry(0.045, 8, 8), pulseMat);
+      group.add(pulse);
+
+      nodes.push({
+        mesh: mesh, conduit: conduit, pulse: pulse,
+        radius: 2.5 + Math.random() * 1.1,
+        tiltAxis: new THREE.Vector3(Math.random() - 0.5, 1, Math.random() - 0.5).normalize(),
+        tiltAngle: (Math.random() - 0.5) * 1.4,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.18 + Math.random() * 0.16,
+        pulseSpeed: 0.5 + Math.random() * 0.35,
+        pulsePhase: Math.random() * 2
+      });
+    }
+
+    var UP = new THREE.Vector3(0, 1, 0);
+    function orientConduit(conduit, from, to) {
+      var dir = new THREE.Vector3().subVectors(to, from);
+      var len = dir.length();
+      conduit.position.copy(from).addScaledVector(dir, 0.5);
+      conduit.scale.set(1, len, 1);
+      conduit.quaternion.setFromUnitVectors(UP, dir.normalize());
+    }
+
+    // ---- spring-physics response to the cursor (natural overshoot, not linear lerp) ----
+    var targetRotX = 0, targetRotY = 0;
+    var rotVelX = 0, rotVelY = 0, rotCurX = 0, rotCurY = 0;
+    var STIFFNESS = 0.05, DAMPING = 0.82;
+
+    wrap.addEventListener('mousemove', function(e){
+      var r = wrap.getBoundingClientRect();
+      var mx = ((e.clientX - r.left) / r.width) * 2 - 1;
+      var my = ((e.clientY - r.top) / r.height) * 2 - 1;
+      targetRotY = mx * 0.55;
+      targetRotX = my * 0.28;
+    });
+    wrap.addEventListener('mouseleave', function(){ targetRotX = 0; targetRotY = 0; });
+
+    var clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      var t = clock.getElapsedTime();
+
+      core.rotation.y = t * 0.18;
+      core.rotation.x = Math.sin(t * 0.35) * 0.08;
+      core.position.y = Math.sin(t * 0.6) * 0.12;
+      floor.position.y = -2.6 + core.position.y;
+
+      nodes.forEach(function(n){
+        n.angle += n.speed * 0.016;
+        var p = new THREE.Vector3(Math.cos(n.angle) * n.radius, 0, Math.sin(n.angle) * n.radius);
+        p.applyAxisAngle(n.tiltAxis, n.tiltAngle);
+        p.add(core.position);
+        n.mesh.position.copy(p);
+
+        orientConduit(n.conduit, core.position, p);
+
+        var cycle = (t * n.pulseSpeed + n.pulsePhase) % 2;
+        var travel = cycle < 1 ? cycle : 2 - cycle;
+        var pulsePos = new THREE.Vector3().lerpVectors(core.position, p, travel);
+        n.pulse.position.copy(pulsePos);
+        n.pulse.material.opacity = 0.35 + 0.55 * Math.sin(travel * Math.PI);
+      });
+
+      rotVelY += (targetRotY - rotCurY) * STIFFNESS;
+      rotVelY *= DAMPING;
+      rotCurY += rotVelY;
+      rotVelX += (targetRotX - rotCurX) * STIFFNESS;
+      rotVelX *= DAMPING;
+      rotCurX += rotVelX;
+      group.rotation.y = rotCurY + t * 0.015;
+      group.rotation.x = rotCurX;
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    function onResize() {
+      var w = wrap.clientWidth, h = wrap.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h, false);
+    }
+    window.addEventListener('resize', onResize);
+  } else if (canvas) {
+    wrap.style.display = 'none';
+  }
+
+  /* ---------- Scroll-spy navigation ---------- */
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.index-list a'));
+
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var link = document.querySelector('.index-list a[data-section="' + entry.target.id + '"]');
+      if (!link) return;
+      if (entry.isIntersecting) {
+        navLinks.forEach(function(l){ l.classList.remove('active'); });
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(function(s){ spy.observe(s); });
+
+  /* ---------- Reveal-on-scroll (single coordinated pass per section) ---------- */
+  var reveal = new IntersectionObserver(function(entries, obs){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(function(el){ reveal.observe(el); });
+
+  /* ---------- Animated stat counters ---------- */
+  var statEls = Array.prototype.slice.call(document.querySelectorAll('.stat .n'));
+  var countedOnce = false;
+  var statObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting && !countedOnce) {
+        countedOnce = true;
+        statEls.forEach(function(el){
+          var target = parseFloat(el.getAttribute('data-count'));
+          var decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+          var suffix = el.getAttribute('data-suffix') || '';
+          var start = performance.now();
+          var duration = 900;
+          function tick(now){
+            var p = Math.min((now - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            var val = target * eased;
+            el.textContent = (decimals ? val.toFixed(decimals) : Math.round(val)) + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+        statObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+  var statRow = document.querySelector('.stat-row');
+  if (statRow) statObserver.observe(statRow);
+
+})();
+</script>
 </body>
 </html>
